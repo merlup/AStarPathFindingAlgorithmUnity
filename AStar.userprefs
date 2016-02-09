@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CreatePlane.js">
+    <Files>
+      <File FileName="../OpenWorld/Assets/Scripts/MiniMap/Minimap.js" Line="1" Column="1" />
+      <File FileName="../OpenWorld/Assets/Scripts/MiniMap/Blip.js" Line="1" Column="1" />
+      <File FileName="../OpenWorld/Assets/Scripts/GameLogic/Spawner.js" Line="87" Column="43" />
+      <File FileName="Assets/InputFields.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CreatePlane.js" Line="34" Column="34" />
+      <File FileName="../OpenWorld/Assets/Scripts/GameLogic/Counters.js" Line="2" Column="33" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

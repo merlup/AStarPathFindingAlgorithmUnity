@@ -10,6 +10,11 @@ public var PlaneSet;
 public var Obstacle: Rigidbody;
 public var Obstacles = new Array();
 public var ObstacleCount: float;
+public var WidthField; 
+public var HeightField;
+public var WidthText: UI.Text;
+public var HeightText: UI.Text;
+public var Plot = false;
 
 
 
@@ -17,28 +22,36 @@ function Start () {
 RectTransform = GetComponent("RectTransform");
 enemy = GameObject.Find("Enemy");
 target = GameObject.Find("Player");
+WidthField = GameObject.Find("WidthField");
+HeightField = GameObject.Find("HeightField");
+WidthText = WidthField.GetComponent("Text");
+HeightText = HeightField.GetComponent("Text");
 
 }
 
 function Update () {
 RectTransform.localScale.x = width;
 RectTransform.localScale.z = height;
+width = float.Parse(WidthText.text);
+height = float.Parse(HeightText.text);
 
 PlaneSize = width * height ;	
 
-	if(width >= 0 && height >= 0) {
-		PlaneSet = true;
-	} else {
-		PlaneSet = false;
-	}
+if(Plot == true) {
+		if(width >= 0 && height >= 0) {
+			PlaneSet = true;
+		} else {
+			PlaneSet = false;
+		}
 
-	if( PlaneSet == true && PlaneSize >= 1) {
-		SetRandomObstacle();
-		SetEnemyPosition();
-		SetTargetPosition();
-	} else {
-		HideEnemy();
-		HideTarget();
+		if( PlaneSet == true && PlaneSize >= 1) {
+			SetRandomObstacle();
+			SetEnemyPosition();
+			SetTargetPosition();
+		} else {
+			HideEnemy();
+			HideTarget();
+		}
 	}
 }
 
@@ -72,10 +85,12 @@ function SetTargetPosition() {
 function SetRandomObstacle () {
 	if( Obstacles.length < ObstacleCount ) {
 		Instantiate(Obstacle, new Vector3(Random.Range(- width * 4.5, width * 4.5), 0, Random.Range(- height * 4.5, height * 4.5)), Quaternion.identity );
+		this.Obstacle.transform.localScale = new Vector3(Random.Range(10, 25), 0.1, Random.Range(10, 25));
 		Obstacles.Push(this.Obstacle);
 	}
 
 }
+
 
 function HideEnemy() {
 	enemy.GetComponent(Renderer).enabled = false;
@@ -84,3 +99,9 @@ function HideEnemy() {
 function HideTarget() {
 	target.GetComponent(Renderer).enabled = false;
 }
+
+	function OnTriggerEnter (other : Collider) {
+			if(other.gameObject.tag.name == "Obstacle") {
+				this.Obstacle.transform.postion = new Vector3(Random.Range(- width * 4.5, width * 4.5), 0, Random.Range(- height * 4.5, height * 4.5));
+			}
+		}
