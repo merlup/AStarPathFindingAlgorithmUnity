@@ -13,6 +13,8 @@ public var Obstacles = new Array();
 public var ObstacleCount: float;
 public var WidthField; 
 public var HeightField;
+public var NumberOfObjects;
+public var ObjectsText: UI.Text;
 public var WidthText: UI.Text;
 public var HeightText: UI.Text;
 
@@ -25,8 +27,10 @@ enemy = GameObject.Find("Enemy");
 target = GameObject.Find("Player");
 WidthField = GameObject.Find("WidthField");
 HeightField = GameObject.Find("HeightField");
+NumberOfObjects = GameObject.Find("ObjectField");
 WidthText = WidthField.GetComponent("Text");
 HeightText = HeightField.GetComponent("Text");
+ObjectsText = NumberOfObjects.GetComponent("Text");
 ObstacleCounter = 0;
 
 }
@@ -37,6 +41,7 @@ RectTransform.localScale.x = width;
 RectTransform.localScale.z = height;
 width = float.Parse(WidthText.text);
 height = float.Parse(HeightText.text);
+ObstacleCount = float.Parse(ObjectsText.text);
 
 }
 
