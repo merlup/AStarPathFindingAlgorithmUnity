@@ -7,9 +7,8 @@ public var collision = false;
 
 
 function Start () {
-var CreatePlane = GetComponent("CreatePlane");
-var node = GameObject.FindWithTag("Player");
-
+	var CreatePlane = GetComponent("CreatePlane");
+	var node = GameObject.FindWithTag("Player");
 }
 
 
