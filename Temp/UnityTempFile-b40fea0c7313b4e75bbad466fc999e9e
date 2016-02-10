@@ -84,5 +84,7 @@
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
 -i:UnityEditor
 'Assets/InputFields.js'
+'Assets/Obstacle.js'
+'Assets/PlayerTraits.js'
 'Assets/Scripts/AStar.js'
 'Assets/Scripts/CreatePlane.js'
