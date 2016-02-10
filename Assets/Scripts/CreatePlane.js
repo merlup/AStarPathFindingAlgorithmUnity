@@ -58,7 +58,8 @@ function CreatePlane () {
 
 function SetEnemyPosition() {
 	if(enemyset == false) {
-		Instantiate(Enemy, new Vector3(Random.Range(- width * 4.5, width * 4.5), 0, Random.Range(- height * 4.5, height * 4.5)), Quaternion.identity );
+		var newEnemy = Instantiate(Enemy, new Vector3(Random.Range(- width * 4.5, width * 4.5), 0, Random.Range(- height * 4.5, height * 4.5)), Quaternion.identity );
+		newEnemy.transform.position.y = 0 + newEnemy.transform.localScale.y / 2;
 		if(Enemy.transform.position == Obstacle.transform.postion) {
 			Enemy.transform.position = new Vector3(Random.Range(- width * 4.5, width * 4.5 ), 0, Random.Range(- height * 4.5, height * 4.5));
 		}
@@ -68,7 +69,8 @@ function SetEnemyPosition() {
 
 function SetTargetPosition() {
 	if(targetset == false) {
-		Instantiate(Player, new Vector3(Random.Range(- width * 4.5, width * 4.5), 0, Random.Range(- height * 4.5, height * 4.5)), Quaternion.identity );
+		var newPlayer = Instantiate(Player, new Vector3(Random.Range(- width * 4.5, width * 4.5), 0, Random.Range(- height * 4.5, height * 4.5)), Quaternion.identity );
+		newPlayer.transform.position.y = 0 + newPlayer.transform.localScale.y / 2;
 		if(Player.transform.position == Enemy.transform.postion) {
 			Player.transform.position = new Vector3(Random.Range(- width * 4.5, width * 4.5), 0, Random.Range(- height * 4.5, height * 4.5));
 		}
@@ -79,7 +81,8 @@ function SetTargetPosition() {
 function SetRandomObstacle () {
 while(ObstacleCount > Obstacles.length  ){
 		var NewObstacle = Instantiate(Obstacle, new Vector3(Random.Range(- width * 4.5, width * 4.5), 0, Random.Range(- height * 4.5, height * 4.5)), Quaternion.identity );
-		NewObstacle.transform.localScale = new Vector3(Random.Range(10, 25), Random.Range(1,20), Random.Range(10, 25));
+		NewObstacle.transform.localScale = new Vector3(Random.Range(10, 25), Random.Range(10,40), Random.Range(10, 25));
+		NewObstacle.transform.position.y = 0 + NewObstacle.transform.localScale.y /2;
 		NewObstacle.transform.SetParent(walls.transform);
 		Obstacles.Push(NewObstacle);
 
@@ -90,9 +93,4 @@ while(ObstacleCount > Obstacles.length  ){
 	}
 
 }
-
-function SetGrid() {
-Grid.CreateGrid();
-}
-
 

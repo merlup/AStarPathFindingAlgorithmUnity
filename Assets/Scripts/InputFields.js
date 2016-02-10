@@ -1,4 +1,4 @@
-﻿#pragma strict
+﻿
 public var CreatePlane : CreatePlane;
 
 function Start () {

@@ -1,4 +1,4 @@
-﻿#pragma strict
+﻿
 public var player : Transform;
 public var grid : Node[,];
 public var gridWorldSize: Vector2;
@@ -58,7 +58,7 @@ function OnDrawGizmos() {
 	if(grid != null) {
 		var playerNode = NodeFromWorldPoint(player.position);
 		for(var n in  grid) {
-			Gizmos.color = (n.walkable)? Color.white: Color.red;
+			Gizmos.color = (n.walkable)? Color.green: Color.red;
 				if(playerNode == n) {
 					Gizmos.color = Color.blue;
 				}
