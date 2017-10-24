@@ -45,7 +45,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CtoJS\TestCode.cs" />
+     <Compile Include="Assets\Prefabs\Grid.cs" />
+     <Compile Include="Assets\Prefabs\Obstacle.cs" />
+     <Compile Include="Assets\Prefabs\PlayerTraits.cs" />
+     <Compile Include="Assets\Scripts\CreatePlane.cs" />
+     <Compile Include="Assets\Scripts\EnemyTraits.cs" />
+     <Compile Include="Assets\Scripts\Heap.cs" />
+     <Compile Include="Assets\Scripts\InputFields.cs" />
+     <Compile Include="Assets\Scripts\Node.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding.cs" />
      <Compile Include="Assets\pathfinding.cs" />
+     <None Include="Assets\CtoJS\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
